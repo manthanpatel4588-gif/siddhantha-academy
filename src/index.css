@@ -7,7 +7,7 @@
   }
 
   body {
-    @apply bg-slate-950 text-slate-900 antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden;
+    @apply bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white overflow-x-hidden;
   }
 }
 
@@ -16,74 +16,77 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #cbd5e1;
   border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #94a3b8;
 }
 
-/* Glassmorphism & Neon Glow Styles */
-.glass-nav {
-  background: rgba(15, 23, 42, 0.85);
+/* Professional Light Glassmorphism & Soft Glows */
+.glass-nav-light {
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
 
-.glass-card-dark {
-  background: rgba(30, 41, 59, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
 .glass-card-light {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
-/* Animated Gradient Background */
-@keyframes gradientBg {
+.glass-card-frost {
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Animated Gradient Text for Light Mode */
+@keyframes gradientTextLight {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-.animate-gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 25%, #818cf8 50%, #93c5fd 75%, #ffffff 100%);
+.animate-gradient-text-light {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 30%, #0284c7 60%, #1d4ed8 100%);
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: gradientBg 6s ease infinite;
+  animation: gradientTextLight 6s ease infinite;
 }
 
-.glow-blue-lg {
-  box-shadow: 0 0 50px -10px rgba(37, 99, 235, 0.4);
+/* Soft Glow Utilities */
+.glow-blue-light {
+  box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.15);
 }
 
-.glow-emerald-lg {
-  box-shadow: 0 0 50px -10px rgba(16, 185, 129, 0.4);
+.glow-emerald-light {
+  box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.2);
 }
 
-/* Float Keyframes */
+/* Float Animations */
 @keyframes floatSlow {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(1.5deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
 }
 
 .animate-float-slow {
   animation: floatSlow 5s ease-in-out infinite;
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.08); }
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
 }
 
-.animate-pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
+.animate-pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite;
 }
